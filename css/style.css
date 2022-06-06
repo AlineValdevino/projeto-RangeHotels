@@ -8,6 +8,27 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
 }
 
+.clearfix::after, .row::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.maxwidth {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-play {
+    height: 5em;
+    display: none;
+}
+.icon-play img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 /*CABEÇALHO*/
 .top-header {
     text-align: center;
@@ -63,4 +84,162 @@ h1, h2, h3, h4, h5, h6 {
     color: #a87bb7;
     font-size: 1em;
     line-height: 1.5em;
+}
+
+/*SEGUNDA SEÇÃO*/
+.middle-content {
+    padding: 2em;
+    background-color: #f6f6f6;
+    text-align: center;
+}
+.middle-content-title {
+    font-size: 1.25em;
+    color: #652e78;
+    text-transform: uppercase;
+}
+.middle-content p {
+    line-height: 1.5em;
+    color: #222;
+}
+.middle-content span[class^=icon] {
+    font-size: 3.5em;
+    color: #652e78;
+}
+
+/*TERCEIRA SEÇÃO*/
+.main-content {
+    padding: 2em;
+}
+.main-content p {
+    line-height: 1.25em;
+}
+.main-content-article {
+    margin-bottom: 3.5em;
+}
+.main-content-title {
+    letter-spacing: .2em;
+    font-size: 1.25em;
+    color: #652e78;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+/*RODAPÉ*/
+.hidden {
+    width: 0em;
+    height: 0em;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+}
+.footer {
+    background-color: #25303e;
+    color: #83969f;
+    text-align: center;
+    padding-bottom: 2em;
+}
+.footer-menushare {
+    background-color: #303d4c;
+    padding: .5em;
+}
+.footer-menushare li {
+    display: inline-block;
+    margin: 0em 1em;
+}
+.footer-menushare a {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: white;
+}
+
+/*RESPONSIVIDADE PRA TELA COM NO MÍNIMO 780PX*/
+@media screen and (min-width: 48.75em){
+    /*CABEÇALHO / NAVEGAÇÃO*/
+    .top-header-logo {
+        float: left;
+    }
+    .icon-play {
+        display: block;
+    }
+    .top-nav {
+        background-color: transparent;
+        float: right;
+        margin-top: 30px;
+    }
+    .top-nav ul {
+        margin: 0em;
+        padding: 0em;
+    }
+    .top-nav li {
+        display: inline-block;
+    }
+    .top-nav a {
+        color: #713a84;
+    }
+    .top-nav a:hover {
+        background-color: #521a66;
+        color: white;
+        transition: .3s;
+    }
+
+    /*PRIMEIRA SEÇÃO*/
+    .top-content {
+        background-color: #521a66;
+        color: white;
+    }
+    .top-content-title, .top-content-subtitle {
+        color: white;
+    }
+
+    /*SEGUNDA SEÇÃO - GRID*/
+    .col-1_4 {
+        width: 44%;
+        margin: 3%;
+        float: left;
+    }
+
+    /*TERCEIRA SEÇÃO*/
+    .main-content-article .button {
+        float: right;
+    }
+}
+
+/*RESPONSIVIDADE PARA TELA COM NO MÍNIMO 1000PX*/
+@media screen and (min-width: 62.5em) {
+    /*PRIMEIRA SEÇÃO*/
+    .top-content {
+        background: #521a66 url("../images/bg_topo_1198x670.jpg");
+        background-position: center bottom;
+        height: 20em;
+        padding-top: 17em;
+    }
+}
+
+/*RESPONSIVIDADE PARA TELA COM NO MÍNIMO 1024PX*/
+@media screen and (min-width: 74em){
+    /*PRIMEIRA SEÇÃO*/
+    .top-content {
+        background-image: url("../images/bg_topo_1600x1374.jpg");
+        padding: 25em 20em 10em 20em;
+        background-position: center top;
+    }
+    .icon-play {
+        height: 7em;
+    }
+
+    /*SEGUNDA SEÇÃO*/
+    .col-1_4 {
+        width: 23%;
+        margin: 1%;
+    }
+
+    /*TERCEIRA SEÇÃO*/
+    .col-1_2 {
+        width: 48%;
+        margin: 1%;
+        float: left;
+    }
+    .main-content-article .button {
+        float: none;
+    }
 }
